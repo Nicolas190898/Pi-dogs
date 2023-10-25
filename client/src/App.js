@@ -1,8 +1,9 @@
 import { Routes , Route,  } from "react-router-dom";
-import Detail from "./views/detail/Detail";
+
 import Form from "./views/form/Form";
 import Home from "./views/home/Home";
 import Landing from "./views/landing/Landing";
+import CardDetail from "./views/detail/cardDetail";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
           <Route path='/' element={ <Landing/>} />
           <Route exact path='/home' element={ <Home/>} />
           <Route path='/create' element={ <Form/>} />
-          <Route path='/home/:id' element={ <Detail/>} />
+          <Route path='/detail/:id' element={<CardDetail/> } />
         </Routes>
       </div>
   );

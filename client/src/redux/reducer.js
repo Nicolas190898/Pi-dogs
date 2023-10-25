@@ -15,7 +15,13 @@ import {
 
 const initialState = {
   allDogs: [],
+  allTemperaments: [],
   filteredData: [],
+  currentPage: 1,
+  totalPages: 1,
+  isLoading: false,
+  isClean: false,
+  sortOrder: "asc",
 };
 
 export default function reducer(state = initialState, { type, payload }) {

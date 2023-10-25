@@ -1,9 +1,11 @@
-import NavBar from "../../components/navBar/NavBar";
+
 import Cards from "../../components/cards/Cards";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {allDogs} from '../../redux/actions'
 import "./Home.styles.css";
+import Paginator from "../../components/paginator/Paginator";
+import Nav from "../../components/navBar/Nav";
 
 function Home() {
   const dispatch = useDispatch();
@@ -15,8 +17,9 @@ function Home() {
 
   return (
     <div className="home">
-      <h2 className="home-title">home</h2>
+      <Nav/>
       <Cards dogs={dogs} />
+      {dogs.length > 0 ? <Paginator /> : <h1>Dogs not found</h1>}
     </div>
   );
 }
